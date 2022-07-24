@@ -50,4 +50,12 @@ export const CharacterName = styled.div`
   padding: 5px;
   margin: 0;
   font-size: 9px;
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h3 {
+      margin: 0;
+    }
+  }
 `;
