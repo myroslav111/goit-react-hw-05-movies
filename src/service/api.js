@@ -75,6 +75,7 @@ const apiGet = {
   movieById: getDataById,
   getReviews: getDataReviewsById,
   getCharacter: getDataActorById,
+  getCinemaByName: getDataByName,
 };
 
 export default apiGet;
