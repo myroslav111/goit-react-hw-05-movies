@@ -13,11 +13,10 @@ async function getDataPopularCinema() {
   };
   try {
     const { data } = await axios.get(`${URL}`);
-    console.log(data);
+    // console.log(data);
     return data.results;
   } catch (error) {}
 }
-// getDataPopularCinema();
 
 // поиск по name фильма на апи themoviedb
 async function getDataByName() {
@@ -32,7 +31,6 @@ async function getDataByName() {
     return data;
   } catch (error) {}
 }
-// getDataByName();
 
 // get by id cinema
 async function getDataById(id) {
@@ -42,11 +40,10 @@ async function getDataById(id) {
   };
   try {
     const { data } = await axios.get(`${URL_SEARCH_BY_ID}/${id}`);
-    console.log(data);
+
     return data;
   } catch (error) {}
 }
-// getDataById(507086);
 
 // search actor by id
 async function getDataActorById(id) {
@@ -56,11 +53,9 @@ async function getDataActorById(id) {
   };
   try {
     const { data } = await axios.get(`${URL_SEARCH_BY_ID}/${id}/credits`);
-    console.log(data);
-    return data;
+    return data.cast;
   } catch (error) {}
 }
-// getDataActorById(507086);
 
 // search reviews by id
 async function getDataReviewsById(id) {
@@ -71,13 +66,15 @@ async function getDataReviewsById(id) {
   };
   try {
     const { data } = await axios.get(`${URL_SEARCH_BY_ID}/${id}/reviews`);
-    console.log(data);
-    return data;
+    return data.results;
   } catch (error) {}
 }
-// getDataReviewsById(507086);
+
 const apiGet = {
   popular: getDataPopularCinema,
+  movieById: getDataById,
+  getReviews: getDataReviewsById,
+  getCharacter: getDataActorById,
 };
 
 export default apiGet;

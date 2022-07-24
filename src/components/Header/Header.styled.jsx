@@ -43,10 +43,21 @@ export const Link = styled(NavLink)`
     background-color: #1abc9c;
     border-radius: 8px;
     font-size: 18px;
+    color: white;
+    font-weight: normal;
   }
   &:nth-of-type(2):hover {
     background-color: #e74c3c;
     border-radius: 8px;
     font-size: 18px;
+    color: white;
+    font-weight: normal;
+  }
+
+  &.active {
+    /* color: green; */
+    font-weight: bold;
+    font-size: 20px;
+    box-shadow: 0 0 25px rgb(0 0 0 / 10%), inset 0 0 1px rgb(255 255 255 / 60%);
   }
 `;
