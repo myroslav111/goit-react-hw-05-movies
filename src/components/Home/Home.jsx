@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 const Home = () => {
   const [cinema, setCinema] = useState([]);
   const [booleanToTitle, setBooleanToTitle] = useState(false);
-
+  setBooleanToTitle(false);
   useEffect(() => {
     (async () => {
       try {
