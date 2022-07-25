@@ -3,6 +3,9 @@ import { useState, useEffect, Suspense } from 'react';
 import apiGet from 'service/api';
 import Movie from 'components/Movie/Movie';
 import { Wrap, NavLinkStyled } from './MovieDetails.styled';
+import { Circles } from 'react-loader-spinner';
+import { WrapSpiner } from 'components/App.styled';
+import { toast } from 'react-toastify';
 
 const MovieDetails = () => {
   //Хук useParamsвозвращает объект пар ключ/значение динамических параметров из текущего URL-адреса, которые были сопоставлены <Route path>.
@@ -21,7 +24,7 @@ const MovieDetails = () => {
 
       try {
       } catch (error) {
-        console.log('error');
+        toast.error(error.message);
       }
     })();
   }, [movieId]);
@@ -29,17 +32,33 @@ const MovieDetails = () => {
   return (
     <>
       {movie && <Movie dataCinema={movie} />}
-      <Wrap>
-        <h2>Additional information</h2>
-        <NavLinkStyled to="cast" state={{ from: location }}>
-          Cast
-        </NavLinkStyled>
-        <NavLinkStyled to="reviews" state={{ from: location }}>
-          Reviews
-        </NavLinkStyled>
-      </Wrap>
+      {movie && (
+        <Wrap>
+          <h2>Additional information</h2>
+          <NavLinkStyled to="cast" state={{ from: location }}>
+            Cast
+          </NavLinkStyled>
+          <NavLinkStyled to="reviews" state={{ from: location }}>
+            Reviews
+          </NavLinkStyled>
+        </Wrap>
+      )}
 
-      <Suspense>
+      <Suspense
+        fallback={
+          <WrapSpiner>
+            <Circles
+              height="80"
+              width="80"
+              color="#ff6b08"
+              ariaLabel="circles-loading"
+              wrapperStyle={{}}
+              wrapperClass=""
+              visible={true}
+            />
+          </WrapSpiner>
+        }
+      >
         <Outlet context={{ movieId, movie }} />
       </Suspense>
     </>

@@ -1,15 +1,149 @@
 @import-normalize; /* bring in normalize.css styles */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@500&family=The+Nautigal:wght@700&display=swap');
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    sans-serif; */
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+  font-family: 'Amatic SC', cursive;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/*----------- animation title----------*/
+@keyframes animate {
+  0% {
+    color: grey;
+    box-shadow: none;
+  }
+  18% {
+    color: grey;
+    box-shadow: none;
+  }
+  20% {
+    color: grey;
+    box-shadow: none;
+  }
+  50.1% {
+    color: grey;
+    box-shadow: none;
+  }
+  60% {
+    color: grey;
+    box-shadow: none;
+  }
+  65.1% {
+    color: grey;
+    box-shadow: none;
+  }
+  80% {
+    color: grey;
+    box-shadow: none;
+  }
+  90.1% {
+    color: grey;
+    box-shadow: none;
+  }
+
+  92% {
+    color: grey;
+    box-shadow: none;
+  }
+  18.1% {
+    color: #fff;
+    text-shadow: 0 0 10px #ff6b08, 0 0 20px #ff6b08, 0 0 40px #ff6b08,
+      0 0 80px #ff6b08, 0 0 160px #ff6b08;
+  }
+  20.1% {
+    color: #fff;
+    text-shadow: 0 0 10px #ff6b08, 0 0 20px #ff6b08, 0 0 40px #ff6b08,
+      0 0 80px #ff6b08, 0 0 160px #ff6b08;
+  }
+  30% {
+    color: #fff;
+    text-shadow: 0 0 10px #ff6b08, 0 0 20px #ff6b08, 0 0 40px #ff6b08,
+      0 0 80px #ff6b08, 0 0 160px #ff6b08;
+  }
+  50% {
+    color: #fff;
+    text-shadow: 0 0 10px #ff6b08, 0 0 20px #ff6b08, 0 0 40px #ff6b08,
+      0 0 80px #ff6b08, 0 0 160px #ff6b08;
+  }
+  60.1% {
+    color: #fff;
+    text-shadow: 0 0 10px #ff6b08, 0 0 20px #ff6b08, 0 0 40px #ff6b08,
+      0 0 80px #ff6b08, 0 0 160px #ff6b08;
+  }
+  65% {
+    color: #fff;
+    text-shadow: 0 0 10px #ff6b08, 0 0 20px #ff6b08, 0 0 40px #ff6b08,
+      0 0 80px #ff6b08, 0 0 160px #ff6b08;
+  }
+  80.1% {
+    color: #fff;
+    text-shadow: 0 0 10px #ff6b08, 0 0 20px #ff6b08, 0 0 40px #ff6b08,
+      0 0 80px #ff6b08, 0 0 160px #ff6b08;
+  }
+  90% {
+    color: #fff;
+    text-shadow: 0 0 10px #ff6b08, 0 0 20px #ff6b08, 0 0 40px #ff6b08,
+      0 0 80px #ff6b08, 0 0 160px #ff6b08;
+  }
+  92.1% {
+    color: #fff;
+    text-shadow: 0 0 10px #ff6b08, 0 0 20px #ff6b08, 0 0 40px #ff6b08,
+      0 0 80px #ff6b08, 0 0 160px #ff6b08;
+  }
+  100% {
+    color: #fff;
+    text-shadow: 0 0 10px #ff6b08, 0 0 20px #ff6b08, 0 0 40px #ff6b08,
+      0 0 80px #ff6b08, 0 0 160px #ff6b08;
+  }
+}
+
+/* -------animation nav linc-------*/
+@keyframes animation1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes animation2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes animation3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+@keyframes animation4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
 }

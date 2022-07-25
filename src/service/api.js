@@ -19,16 +19,15 @@ async function getDataPopularCinema() {
 }
 
 // поиск по name фильма на апи themoviedb
-async function getDataByName() {
+async function getDataByName(name) {
   axios.defaults.params = {
     api_key: API_KEY,
     language: 'uk-UA',
-    query: 'Jack+Reacher',
+    query: `${name}`,
   };
   try {
     const { data } = await axios.get(`${URL_SEARCH_BY_NAME}`);
-    console.log(data);
-    return data;
+    return data.results;
   } catch (error) {}
 }
 

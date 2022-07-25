@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import apiGet from 'service/api';
 import { WrapContent } from './Reviews.styled';
+import { animateScroll } from 'react-scroll';
+import { toast } from 'react-toastify';
 
 const Reviews = () => {
   const { movieId, movie } = useOutletContext();
@@ -12,10 +14,14 @@ const Reviews = () => {
       try {
         const dataReviews = await apiGet.getReviews(movieId);
         setReview(dataReviews);
-      } catch (error) {}
+      } catch (error) {
+        toast.error(error.message);
+      }
     })();
   }, [movieId]);
-
+  if (reviews) {
+    animateScroll.scrollMore(400);
+  }
   return (
     <>
       {reviews &&

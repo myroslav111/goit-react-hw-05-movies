@@ -12,7 +12,7 @@ export const WrapContent = styled.ul`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  color: white;
-  color: red;
+  /* color: white; */
+  color: #ff6b08;
   font-weight: 900;
 `;

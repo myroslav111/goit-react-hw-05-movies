@@ -7,8 +7,20 @@ const Header = () => {
   return (
     <HeaderWrap>
       <HeaderNav>
-        <Link to={routePath.home}>Home</Link>
-        <Link to={routePath.movies}>Movies</Link>
+        <Link to={routePath.home}>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Home
+        </Link>
+        <Link to={routePath.movies}>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Movies
+        </Link>
       </HeaderNav>
     </HeaderWrap>
   );

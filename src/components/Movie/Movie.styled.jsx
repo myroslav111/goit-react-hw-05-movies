@@ -40,11 +40,11 @@ export const Head = styled.div`
     width: 40px;
     z-index: 100;
     position: fixed;
-    left: 224px;
+    left: 232px;
     top: 5px;
 
     background: transparent;
-    color: #fff;
+    color: black;
     box-shadow: 0 0 25px rgb(0 0 0 / 10%), inset 0 0 1px rgb(255 255 255 / 60%);
     padding: 0px;
     outline: inherit;
@@ -52,7 +52,7 @@ export const Head = styled.div`
     text-align: center;
     border: 0px;
     text-decoration: none;
-
+    font-family: 'Amatic SC', cursive;
     line-height: 24px;
     font-style: normal;
     font-weight: 500;

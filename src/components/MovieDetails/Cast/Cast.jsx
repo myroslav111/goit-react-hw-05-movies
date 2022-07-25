@@ -3,6 +3,8 @@ import { useOutletContext } from 'react-router-dom';
 import apiGet from 'service/api';
 import { CardCharacter, Img, CharacterName, Wrap } from './Cast.styled';
 import def from 'components/defaultImg';
+import { animateScroll } from 'react-scroll';
+import { toast } from 'react-toastify';
 
 const Cast = () => {
   const { movieId } = useOutletContext();
@@ -13,10 +15,15 @@ const Cast = () => {
       try {
         const dataCast = await apiGet.getCharacter(movieId);
         setCast(dataCast);
-      } catch (error) {}
+      } catch (error) {
+        toast.error(error.message);
+      }
     })();
   }, [movieId]);
 
+  if (cast) {
+    animateScroll.scrollMore(400);
+  }
   return (
     <>
       {cast && (
