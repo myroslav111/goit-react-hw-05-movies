@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 
 const Home = () => {
   const [cinema, setCinema] = useState([]);
+  const [booleanToTitle, setBooleanToTitle] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -20,7 +21,7 @@ const Home = () => {
 
   return (
     <div>
-      <CinemaCardList films={cinema} />
+      <CinemaCardList films={cinema} bool={booleanToTitle} />
     </div>
   );
 };

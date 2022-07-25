@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 
 const Movies = () => {
   const [cinemaObj, setCinemaObj] = useState(null);
+  const [booleanToTitle, setBooleanToTitle] = useState(false);
 
   const handleFormSubmit = async name => {
     try {
@@ -16,6 +17,7 @@ const Movies = () => {
         return;
       }
       setCinemaObj(searchCinema);
+      setBooleanToTitle(true)
     } catch (error) {
       toast.error(error.message);
     }
@@ -24,7 +26,7 @@ const Movies = () => {
   return (
     <Wrap>
       <SearchBar onSubmit={handleFormSubmit} />
-      {cinemaObj && <CinemaCardList films={cinemaObj} />}
+    {cinemaObj && <CinemaCardList films={cinemaObj} bool={booleanToTitle}/>}
     </Wrap>
   );
 };

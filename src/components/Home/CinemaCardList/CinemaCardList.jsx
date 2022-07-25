@@ -10,11 +10,12 @@ import routePath from '../../routePath';
 import def from 'components/defaultImg';
 import { Title } from '../Home.styled';
 
-const CinemaCardList = ({ films }) => {
+const CinemaCardList = ({ films, bool }) => {
   const location = useLocation();
   return (
     <ContainerPopularCinema>
-      <Title>TRENDING TODAY</Title>
+      {!bool && <Title>TRENDING TODAY</Title>}
+
       {films.map(({ title, poster_path, name, id }) => {
         const movieLink = generatePath(routePath.movie, {
           movieId: id,
