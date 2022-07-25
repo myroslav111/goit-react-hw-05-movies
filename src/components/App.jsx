@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import routePath from './routePath';
 import Header from './Header';
 // import Home from './Home';
@@ -44,6 +44,7 @@ export const App = () => {
             <Route path="reviews" element={<Reviews />}></Route>
             <Route path="cast" element={<Cast />}></Route>
           </Route>
+          <Route path="*" element={<Navigate to={routePath.home} replace />} />
         </Routes>
       </Suspense>
       <ToastContainer autoClose={3000} />
