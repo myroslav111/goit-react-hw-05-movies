@@ -7,12 +7,13 @@ import { toast } from 'react-toastify';
 const Home = () => {
   const [cinema, setCinema] = useState([]);
   const [booleanToTitle, setBooleanToTitle] = useState(false);
-  setBooleanToTitle(false);
+
   useEffect(() => {
     (async () => {
       try {
         const cinema = await apiGet.popular();
         setCinema(cinema);
+        setBooleanToTitle(false);
       } catch (error) {
         toast.error(error.message);
       }
