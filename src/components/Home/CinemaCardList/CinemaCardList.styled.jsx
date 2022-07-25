@@ -9,6 +9,9 @@ export const ContainerPopularCinema = styled.div`
   margin-right: auto;
   justify-content: center;
   padding-top: 60px;
+  @media screen and (max-width: 500px) {
+    padding-top: 60px;
+  }
 `;
 
 export const CardCinema = styled(Link)`

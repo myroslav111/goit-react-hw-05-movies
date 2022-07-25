@@ -4,6 +4,7 @@ export const Wrap = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 0;
 `;
 
 export const ContainerPopularCinema = styled.div`

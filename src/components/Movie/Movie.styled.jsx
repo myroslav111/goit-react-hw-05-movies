@@ -77,6 +77,9 @@ export const Head = styled.div`
 export const WrapContent = styled.div`
   display: flex;
   padding: 0 30px 30px 30px;
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+  }
   /* background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20200714/pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg'); */
 `;
 

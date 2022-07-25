@@ -6,6 +6,12 @@ export const Wrap = styled.div`
   position: fixed;
   top: -61px;
   z-index: 100;
+  @media screen and (max-width: 500px) {
+    position: relative;
+    padding-top: 150px;
+    display: block;
+    z-index: 0;
+  }
 `;
 
 export const Form = styled.form`
