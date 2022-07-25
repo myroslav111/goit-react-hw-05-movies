@@ -1,5 +1,5 @@
 import { WrapContent, Img, TextContent, Head } from './Movie.styled';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Movie = ({ dataCinema }) => {
   const {
@@ -12,7 +12,7 @@ const Movie = ({ dataCinema }) => {
     overview,
     genres,
   } = dataCinema;
-
+  const location = useLocation();
   const genresCinema = genres.map(gen => gen.name + ' ');
   // Функция navigateимеет две подписи:
   // Хук возвращает функцию, которая позволяет программно перемещаться
@@ -24,7 +24,7 @@ const Movie = ({ dataCinema }) => {
         <button
           type="button"
           onClick={() => {
-            navigate('/');
+            navigate(location?.state?.from?.pathname ?? '/');
           }}
         >
           {/* location?.state?.from?.pathname ?? */}
