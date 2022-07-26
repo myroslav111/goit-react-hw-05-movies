@@ -26,26 +26,30 @@ const Cast = () => {
   }
   return (
     <>
-      {cast && (
-        <Wrap>
-          {cast.map(({ profile_path, original_name, character, id }) => {
-            const img = profile_path
-              ? `https://image.tmdb.org/t/p/w500${profile_path}`
-              : def;
-            return (
-              <CardCharacter key={id}>
-                <Img src={img} alt="poster of character" />
-                <CharacterName>
-                  <div>
-                    <h3>{original_name}</h3>
-                    <h3>{character || 'хз))'}</h3>
-                  </div>
-                </CharacterName>
-              </CardCharacter>
-            );
-          })}
-        </Wrap>
-      )}
+      {cast &&
+        (cast.length > 0 ? (
+          <Wrap>
+            {cast.map(({ profile_path, original_name, character, id }) => {
+              // console.log(profile_path);
+              const img = profile_path
+                ? `https://image.tmdb.org/t/p/w500${profile_path}`
+                : def;
+              return (
+                <CardCharacter key={id}>
+                  <Img src={img} alt="poster of character" />
+                  <CharacterName>
+                    <div>
+                      <h3>{original_name}</h3>
+                      <h3>{character || 'хз))'}</h3>
+                    </div>
+                  </CharacterName>
+                </CardCharacter>
+              );
+            })}
+          </Wrap>
+        ) : (
+          <p>No cast</p>
+        ))}
     </>
   );
 };
