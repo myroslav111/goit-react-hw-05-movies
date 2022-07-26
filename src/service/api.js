@@ -9,7 +9,7 @@ const URL_SEARCH_BY_ID = 'https://api.themoviedb.org/3/movie';
 async function getDataPopularCinema() {
   axios.defaults.params = {
     api_key: API_KEY,
-    language: 'uk-UA',
+    language: 'en-US',
   };
   try {
     const { data } = await axios.get(`${URL}`);
@@ -22,7 +22,7 @@ async function getDataPopularCinema() {
 async function getDataByName(name) {
   axios.defaults.params = {
     api_key: API_KEY,
-    language: 'uk-UA',
+    language: 'en-US',
     query: `${name}`,
   };
   try {
@@ -35,7 +35,7 @@ async function getDataByName(name) {
 async function getDataById(id) {
   axios.defaults.params = {
     api_key: API_KEY,
-    language: 'uk-UA',
+    language: 'en-US',
   };
   try {
     const { data } = await axios.get(`${URL_SEARCH_BY_ID}/${id}`);
@@ -48,7 +48,7 @@ async function getDataById(id) {
 async function getDataActorById(id) {
   axios.defaults.params = {
     api_key: API_KEY,
-    language: 'uk-UA',
+    language: 'en-US',
   };
   try {
     const { data } = await axios.get(`${URL_SEARCH_BY_ID}/${id}/credits`);
